@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovimientoRotacional : MonoBehaviour
 {
     float time = 0;
+    public Text timeText;
+    public Text anguloText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,10 @@ public class MovimientoRotacional : MonoBehaviour
     {
         time += Time.fixedDeltaTime;
         float a = Angulo(time);
+
+        timeText.text = "T: " + time.ToString();
+        anguloText.text = "Angulo: " + a.ToString();
+
         transform.rotation = Quaternion.Euler(0, 0, a);
 
     }
