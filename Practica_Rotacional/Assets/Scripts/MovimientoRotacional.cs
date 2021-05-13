@@ -8,16 +8,16 @@ public class MovimientoRotacional : MonoBehaviour
     float time = 0;
     public Text timeText;
     public Text anguloText;
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+
+    void Update()
     {
-        time += Time.fixedDeltaTime;
+        time += Time.deltaTime;
         float a = Angulo(time);
 
         timeText.text = "T: " + time.ToString();
